@@ -661,6 +661,7 @@ do
 								mv $HOSTPART/${REAL_ROOT//\.img/-old.img} $HOSTPART/${REAL_ROOT}
 								rm -f $HOSTPART/system-revert
 								good_msg "System reverted to previous state."
+								reboot
 							fi
 						fi
 						# Checking if we should upgrade the system image:
@@ -669,6 +670,7 @@ do
 							mv $HOSTPART/${REAL_ROOT} $HOSTPART/${REAL_ROOT//\.img/-old.img}
 							mv $HOSTPART/${REAL_ROOT//\.img/-new.img} $HOSTPART/${REAL_ROOT}
 							good_msg "System image upgraded successfully."
+							reboot
 						fi
 						# setting REAL_ROOT to a loop block device
 						# so that next sections work correctly
